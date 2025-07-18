@@ -187,6 +187,15 @@ const Wallets = () => {
     setMnemonic("");
   };
 
+  const handleDeleteAllWallets = () => {
+    if(currentWalletsDisplay.length === 0){
+      toast.error("No wallet left to delete.")
+      return;
+    }
+
+    deleteAllWallets();
+  }
+
   return (
     <section>
       {mode === null && <Hero generateSecretPhrase={generateSecretPhrase} />}
@@ -306,7 +315,7 @@ const Wallets = () => {
                     </AlertDialogHeader>
                     <AlertDialogFooter>
                       <AlertDialogCancel>Cancel</AlertDialogCancel>
-                      <AlertDialogAction className="bg-destructive text-destructive-foreground hover:bg-destructive-hover" onClick={() => deleteAllWallets()}>Delete</AlertDialogAction>
+                      <AlertDialogAction className="bg-destructive text-destructive-foreground hover:bg-destructive-hover" onClick={handleDeleteAllWallets}>Delete</AlertDialogAction>
                     </AlertDialogFooter>
                   </AlertDialogContent>
                 </AlertDialog>
