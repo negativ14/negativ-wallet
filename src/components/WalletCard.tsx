@@ -67,7 +67,7 @@ const WalletCard = ({
             <Button
             className="cursor-pointer"
               variant={"ghost"}
-              onClick={() => togglePrivateKeyVisibility(walletIndex)}
+              onClick={() => togglePrivateKeyVisibility(index)}
             >
               {visiblePrivateKey ? (
                 <EyeOff className="size-4" />

@@ -46,9 +46,8 @@ const Wallets = () => {
     deleteAllWallets,
   } = useWalletStore();
 
-  const [visiblePrivateKey, setVisiblePrivateKey] = useState<
-    Record<number, boolean>
-  >({});
+  const [visiblePrivateKey, setVisiblePrivateKey] = useState<Record<number, boolean>>({});
+  
   const hasGenerated = useRef<boolean>(false);
   const isMnemonicValidated = useRef<boolean>(false);
 
