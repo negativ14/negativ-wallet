@@ -126,6 +126,7 @@ const Wallets = () => {
       setWallets((prev) => [...prev, wallet]);
       console.log("wallets after added", wallets);
       increaseEthereumWalletIndex();
+      toast.success("Wallet added successfully");
       console.log("index after adding solana wallet", solanaWalletIndex);
     } catch (error) {
       toast.error("Failed to generate ethereum wallet. Please try again.");
@@ -159,6 +160,7 @@ const Wallets = () => {
       setWallets((prev) => [...prev, wallet]);
       console.log("wallets after added", wallets);
       increaseSolanaWalletIndex();
+      toast.success("Wallet added successfully");
       console.log("index after adding solana wallet", solanaWalletIndex);
     } catch (error) {
       toast.error("Failed to generate solana wallet. Please try again");
