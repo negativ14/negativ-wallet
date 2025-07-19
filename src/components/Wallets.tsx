@@ -46,8 +46,10 @@ const Wallets = () => {
     deleteAllWallets,
   } = useWalletStore();
 
-  const [visiblePrivateKey, setVisiblePrivateKey] = useState<Record<number, boolean>>({});
-  
+  const [visiblePrivateKey, setVisiblePrivateKey] = useState<
+    Record<number, boolean>
+  >({});
+
   const hasGenerated = useRef<boolean>(false);
   const isMnemonicValidated = useRef<boolean>(false);
 
@@ -189,13 +191,13 @@ const Wallets = () => {
   };
 
   const handleDeleteAllWallets = () => {
-    if(currentWalletsDisplay.length === 0){
-      toast.error("No wallet left to delete.")
+    if (walletsToDisplay.length === 0) {
+      toast.error("No wallet left to delete.");
       return;
     }
 
     deleteAllWallets();
-  }
+  };
 
   return (
     <section>
@@ -303,7 +305,7 @@ const Wallets = () => {
               <div className="flex items-center gap-4">
                 <AlertDialog>
                   <AlertDialogTrigger asChild>
-                    <Button variant="destructive">Delete All</Button>
+                    <Button disabled={walletsToDisplay.length === 0} variant="destructive">Delete All</Button>
                   </AlertDialogTrigger>
                   <AlertDialogContent>
                     <AlertDialogHeader>
@@ -311,12 +313,18 @@ const Wallets = () => {
                         Are you absolutely sure?
                       </AlertDialogTitle>
                       <AlertDialogDescription>
-                        This action cannot be undone. This will remove your wallets.
+                        This action cannot be undone. This will remove your
+                        wallets.
                       </AlertDialogDescription>
                     </AlertDialogHeader>
                     <AlertDialogFooter>
                       <AlertDialogCancel>Cancel</AlertDialogCancel>
-                      <AlertDialogAction className="bg-destructive text-destructive-foreground hover:bg-destructive-hover" onClick={handleDeleteAllWallets}>Delete</AlertDialogAction>
+                      <AlertDialogAction
+                        className="bg-destructive text-destructive-foreground hover:bg-destructive-hover "
+                        onClick={handleDeleteAllWallets}
+                      >
+                        Delete
+                      </AlertDialogAction>
                     </AlertDialogFooter>
                   </AlertDialogContent>
                 </AlertDialog>
