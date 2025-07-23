@@ -17,7 +17,7 @@ const Footer = () => {
       <p className="text-foreground tracking-tight font-bold flex items-center gap-2">
         Connect on{" "}
         <a
-          href="https://x.com/RohitMehta1409?t=n5-RF9x5Bx6anWj0BjSaSA&s=09"
+          href="https://x.com/RohitMehta1409"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center cursor-pointer"
