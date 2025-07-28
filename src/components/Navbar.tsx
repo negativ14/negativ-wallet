@@ -27,7 +27,7 @@ const Navbar = () => {
         <a
           href="https://github.com/negativ14/N-WalletKit"
           target="_blank" //open it in a new tab
-          rel="noopener noreferre" //security and performance feature
+          rel="noopener noreferrer" //security and performance feature
           //noopener (Security)
           //noreferrer (Privacy)
         >
